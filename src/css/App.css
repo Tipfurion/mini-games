@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.App-header {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    font-size: 3rem;
+    color: white;
+}
