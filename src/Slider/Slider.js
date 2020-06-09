@@ -1,8 +1,9 @@
 import React from 'react'
+import TikTak from '../TikTak/TikTak.js'
 import leftArrow from './img/arrow_left.svg'
 import rightArrow from './img/arrow_right.svg'
 import './slider.css'
-
+import { BrowserRouter as Router, Switch, Route, useHistory, withRouter, Link } from 'react-router-dom'
 //few less than css duration
 const TRANSITION_DURATION = 450
 
@@ -10,20 +11,7 @@ class Slider extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            sliderElements: [
-                {
-                    title: 'Tik-tak',
-                    img: 'https://via.placeholder.com/600x250',
-                },
-                {
-                    title: 'Chess',
-                    img: 'https://via.placeholder.com/600x249',
-                },
-                {
-                    title: 'Snake',
-                    img: 'https://via.placeholder.com/600x248',
-                },
-            ],
+            sliderElements: props.data, //{title:string, img:string(path)}
             currentItemIndex: 0,
             element: null,
             flag: false,
@@ -54,6 +42,10 @@ class Slider extends React.Component {
         this.state.element.style.opacity = 1
         this.state.element.classList.remove('slider-fade-out')
     }
+    gameClick = (route) => {
+        this.props.selectGame(route)
+        this.props.history.push(route)
+    }
 
     render() {
         return (
@@ -67,8 +59,13 @@ class Slider extends React.Component {
                     }}
                 ></img>
                 <div className="slider-element">
-                    <h2>{this.state.sliderElements[this.state.currentItemIndex].title}</h2>
-                    <img src={this.state.sliderElements[this.state.currentItemIndex].img}></img>
+                    <h2 onClick={() => this.gameClick(this.state.sliderElements[this.state.currentItemIndex].route)}>
+                        {this.state.sliderElements[this.state.currentItemIndex].title}
+                    </h2>
+                    <img
+                        src={this.state.sliderElements[this.state.currentItemIndex].img}
+                        onClick={() => this.gameClick(this.state.sliderElements[this.state.currentItemIndex].route)}
+                    ></img>
                 </div>
 
                 <img
@@ -88,4 +85,4 @@ class Slider extends React.Component {
     }
 }
 
-export default Slider
+export default withRouter(Slider)

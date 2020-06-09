@@ -1,0 +1,58 @@
+#TikTak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    user-select: none;
+}
+p {
+    width: max-content;
+}
+.move-panel {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.moves {
+    display: flex;
+    flex-direction: row;
+}
+.label {
+    display: flex;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.cell {
+    border: 1px solid white;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cell:hover {
+    background-color: #30475e;
+}
+
+button {
+    background-color: #30475e;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: white;
+    color: #30475e;
+}
