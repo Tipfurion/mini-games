@@ -32,12 +32,13 @@ input {
     color: white;
     justify-content: center;
     width: 200px;
-    height: 70px;
+    height: 50px;
     border-radius: 10px;
     background-color: #30475e;
     position: fixed;
     left: 50%;
     margin-left: -100px;
+    top: 0;
 }
 nav {
 }

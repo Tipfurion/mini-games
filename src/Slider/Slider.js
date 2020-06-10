@@ -43,7 +43,7 @@ class Slider extends React.Component {
         this.state.element.classList.remove('slider-fade-out')
     }
     gameClick = (route) => {
-        this.props.selectGame(route)
+        this.props.setUrl('tak')
         this.props.history.push(route)
     }
 

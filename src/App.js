@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, useHistory, withRouter, Link, Redirect, useLocation } from 'react-router-dom'
 import Slider from './Slider/Slider.js'
 import TikTak from './TikTak/TikTak.js'
+import Chess from './Chess/Chess.js'
 import ButtonLink from './ButtonLink.js'
 import './css/App.css'
 
@@ -15,7 +16,7 @@ function App() {
         {
             title: 'Chess',
             img: 'https://via.placeholder.com/600x249',
-            route: '/tik',
+            route: '/chess',
         },
         {
             title: 'Snake',
@@ -23,28 +24,26 @@ function App() {
             route: '/tik',
         },
     ])
-    const [route, setRoute] = useState('/')
+    const [url, setUrl] = useState('/')
     const history = useHistory()
-    function setRouteCallBack(route) {
-        setRoute(route)
-    }
-    let link = <ButtonLink setRoute={setRouteCallBack}> </ButtonLink>
-
-    if (window.location.pathname !== '/') {
-        link = <ButtonLink setRoute={setRouteCallBack}> </ButtonLink>
-    } else {
-        link = null
-    }
     return (
         <Router>
-            <nav>{link}</nav>
             <div className="App">
                 <Switch>
                     <Route exact path="/">
-                        <Slider data={data} selectGame={setRouteCallBack}></Slider>
+                        <Slider data={data} setUrl={setUrl}></Slider>
                     </Route>
                     <Route path="/tik">
+                        <nav>
+                            <ButtonLink setUrl={setUrl}> </ButtonLink>
+                        </nav>
                         <TikTak></TikTak>
+                    </Route>
+                    <Route path="/chess">
+                        <nav>
+                            <ButtonLink setUrl={setUrl}> </ButtonLink>
+                        </nav>
+                        <Chess></Chess>
                     </Route>
                 </Switch>
             </div>

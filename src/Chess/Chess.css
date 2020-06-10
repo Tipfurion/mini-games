@@ -1,0 +1,16 @@
+canvas {
+    border: solid 5px #30475e;
+    margin: auto;
+}
+#divWinMessage {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 100px;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
