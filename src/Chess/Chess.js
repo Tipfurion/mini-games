@@ -96,6 +96,7 @@ function Chess() {
         const blackCellColor = '#595959'
         const whiteCellColor = 'white'
         const activeColor = '#237716'
+
         let clickX
         let turn = 'white'
         let clickY
@@ -997,16 +998,16 @@ function Chess() {
         }
 
         function winMessage(color) {
-            let a = document.getElementById('mainBlock')
-            let div = document.createElement('div')
-            div.id = 'divWinMessage'
-            div.style.backgroundColor = 'green'
-            div.innerHTML = `<span>${color} won </span>`
-            a.appendChild(div)
+            //let a = document.getElementById('mainBlock')
+            //let div = document.createElement('div')
+            //div.id = 'divWinMessage'
+            //div.innerHTML = `<h2>${color} player won! </h2>`
+            //a.appendChild(div)
+            setWin(color)
         }
 
         function setFigures() {
-            winMessage('white')
+            //winMessage('white')
             let whiteRook = new Rook('white', chessPlate[0])
             let whiteRook2 = new Rook('white', chessPlate[7])
             let blackRook = new Rook('black', chessPlate[63])
@@ -1042,12 +1043,26 @@ function Chess() {
             setTimeout(drawFigures, 100)
             setTimeout(drawText, 150)
         }
-
         setFigures()
     })
 
     return (
         <div id="mainBlock">
+            {win ? (
+                <div className="win-message-wrapper">
+                    <div className="win-message">
+                        <h2>{`${win} player won!`}</h2>
+                        <button
+                            className="win-message-button"
+                            onClick={() => {
+                                window.location.reload()
+                            }}
+                        >
+                            restart
+                        </button>
+                    </div>
+                </div>
+            ) : null}
             <canvas id="canvas" width="816" height="816"></canvas>
         </div>
     )

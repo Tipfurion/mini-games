@@ -28,25 +28,28 @@ function App() {
     const history = useHistory()
     return (
         <Router>
-            <div className="App">
-                <Switch>
-                    <Route exact path="/">
+            <Switch>
+                <Route exact path="/">
+                    <div className="App">
                         <Slider data={data} setUrl={setUrl}></Slider>
-                    </Route>
-                    <Route path="/tik">
+                    </div>
+                </Route>
+                <Route path="/tik">
+                    <div className="App">
                         <nav>
                             <ButtonLink setUrl={setUrl}> </ButtonLink>
                         </nav>
+
                         <TikTak></TikTak>
-                    </Route>
-                    <Route path="/chess">
-                        <nav>
-                            <ButtonLink setUrl={setUrl}> </ButtonLink>
-                        </nav>
-                        <Chess></Chess>
-                    </Route>
-                </Switch>
-            </div>
+                    </div>
+                </Route>
+                <Route path="/chess">
+                    <nav>
+                        <ButtonLink setUrl={setUrl}> </ButtonLink>
+                    </nav>
+                    <Chess></Chess>
+                </Route>
+            </Switch>
         </Router>
     )
 }
