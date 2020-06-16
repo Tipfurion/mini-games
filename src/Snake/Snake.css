@@ -1,0 +1,12 @@
+.canvasSnake {
+    border: solid 5px #30475e;
+}
+.score {
+    margin-top: 17%;
+}
+.mainBlockSnake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

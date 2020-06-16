@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './Chess.css'
-import { BrowserRouter as Router, Switch, Route, useHistory, withRouter, Link, Redirect, useLocation } from 'react-router-dom'
 
 import whiteRookImg from './img/whiteRook.png'
 import blackRookImg from './img/blackRook.png'
@@ -19,9 +18,10 @@ import blackPawnImg from './img/blackPawn.png'
 
 import whiteQueenImg from './img/whiteQueen.png'
 import blackQueenImg from './img/blackQueen.png'
-console.log(blackQueenImg)
+console.log(blackQueenImg) // --> OFF
 
-/* eslint no-undef: "off" */
+/* eslint-disable */
+
 function Chess() {
     const [win, setWin] = useState(null)
     useEffect(() => {
@@ -96,7 +96,6 @@ function Chess() {
         const blackCellColor = '#595959'
         const whiteCellColor = 'white'
         const activeColor = '#237716'
-
         let clickX
         let turn = 'white'
         let clickY
@@ -998,11 +997,6 @@ function Chess() {
         }
 
         function winMessage(color) {
-            //let a = document.getElementById('mainBlock')
-            //let div = document.createElement('div')
-            //div.id = 'divWinMessage'
-            //div.innerHTML = `<h2>${color} player won! </h2>`
-            //a.appendChild(div)
             setWin(color)
         }
 
@@ -1044,10 +1038,10 @@ function Chess() {
             setTimeout(drawText, 150)
         }
         setFigures()
-    })
+    }, [])
 
     return (
-        <div id="mainBlock">
+        <div id="mainBlockChess">
             {win ? (
                 <div className="win-message-wrapper">
                     <div className="win-message">
@@ -1063,7 +1057,7 @@ function Chess() {
                     </div>
                 </div>
             ) : null}
-            <canvas id="canvas" width="816" height="816"></canvas>
+            <canvas id="canvas" className="canvasChess" width="816" height="816"></canvas>
         </div>
     )
 }

@@ -3,8 +3,6 @@
     flex-direction: row;
 }
 .slider-element {
-    width: 600px;
-    height: 350px;
     background-color: transparent;
     display: flex;
     justify-content: center;

@@ -56,3 +56,10 @@ button:hover {
     background-color: white;
     color: #30475e;
 }
+.tik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

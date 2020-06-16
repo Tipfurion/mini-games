@@ -17,3 +17,13 @@
     align-items: center;
     background-color: #30475e;
 }
+
+
+
+
+
+<div className="App">
+<h2 className="label">Minigames</h2>
+<Slider data={data} setUrl={setUrl}></Slider>
+<Links></Links>
+</div>
