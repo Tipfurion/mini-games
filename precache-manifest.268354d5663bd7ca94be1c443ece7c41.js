@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b4a76e9a6c0fa322fd5d554a4401e159",
+    "revision": "7f5a32dd6f817eda017be77f745d7473",
     "url": "/mini-games/index.html"
   },
   {
-    "revision": "0a81e7c13d629dbae5ce",
+    "revision": "9e72c1634ebc4f711ae4",
     "url": "/mini-games/static/css/main.dab8f93e.chunk.css"
   },
   {
-    "revision": "b327b228f8bb01b8839b",
-    "url": "/mini-games/static/js/2.674446eb.chunk.js"
+    "revision": "1a82c65e6dad0a8bc6c3",
+    "url": "/mini-games/static/js/2.e189e998.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/mini-games/static/js/2.674446eb.chunk.js.LICENSE.txt"
+    "url": "/mini-games/static/js/2.e189e998.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a81e7c13d629dbae5ce",
-    "url": "/mini-games/static/js/main.deb960b3.chunk.js"
+    "revision": "9e72c1634ebc4f711ae4",
+    "url": "/mini-games/static/js/main.6b675c8f.chunk.js"
   },
   {
     "revision": "bd41957b9f3b4f9a7faa",

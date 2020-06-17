@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mini-games/static/css/main.dab8f93e.chunk.css",
-    "main.js": "/mini-games/static/js/main.deb960b3.chunk.js",
-    "main.js.map": "/mini-games/static/js/main.deb960b3.chunk.js.map",
+    "main.js": "/mini-games/static/js/main.6b675c8f.chunk.js",
+    "main.js.map": "/mini-games/static/js/main.6b675c8f.chunk.js.map",
     "runtime-main.js": "/mini-games/static/js/runtime-main.4bdacdf3.js",
     "runtime-main.js.map": "/mini-games/static/js/runtime-main.4bdacdf3.js.map",
-    "static/js/2.674446eb.chunk.js": "/mini-games/static/js/2.674446eb.chunk.js",
-    "static/js/2.674446eb.chunk.js.map": "/mini-games/static/js/2.674446eb.chunk.js.map",
+    "static/js/2.e189e998.chunk.js": "/mini-games/static/js/2.e189e998.chunk.js",
+    "static/js/2.e189e998.chunk.js.map": "/mini-games/static/js/2.e189e998.chunk.js.map",
     "index.html": "/mini-games/index.html",
-    "precache-manifest.e8ee70487cb97c949e30f6593521bd37.js": "/mini-games/precache-manifest.e8ee70487cb97c949e30f6593521bd37.js",
+    "precache-manifest.268354d5663bd7ca94be1c443ece7c41.js": "/mini-games/precache-manifest.268354d5663bd7ca94be1c443ece7c41.js",
     "service-worker.js": "/mini-games/service-worker.js",
     "static/css/main.dab8f93e.chunk.css.map": "/mini-games/static/css/main.dab8f93e.chunk.css.map",
-    "static/js/2.674446eb.chunk.js.LICENSE.txt": "/mini-games/static/js/2.674446eb.chunk.js.LICENSE.txt",
+    "static/js/2.e189e998.chunk.js.LICENSE.txt": "/mini-games/static/js/2.e189e998.chunk.js.LICENSE.txt",
     "static/media/arrow_left.svg": "/mini-games/static/media/arrow_left.bcad8300.svg",
     "static/media/arrow_right.svg": "/mini-games/static/media/arrow_right.1670e9cb.svg",
     "static/media/chess_250px.png": "/mini-games/static/media/chess_250px.0560864b.png",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4bdacdf3.js",
-    "static/js/2.674446eb.chunk.js",
+    "static/js/2.e189e998.chunk.js",
     "static/css/main.dab8f93e.chunk.css",
-    "static/js/main.deb960b3.chunk.js"
+    "static/js/main.6b675c8f.chunk.js"
   ]
 }
