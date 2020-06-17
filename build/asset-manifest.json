@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dab8f93e.chunk.css",
+    "main.js": "/static/js/main.deb960b3.chunk.js",
+    "main.js.map": "/static/js/main.deb960b3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.371d32f9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.371d32f9.js.map",
+    "static/js/2.674446eb.chunk.js": "/static/js/2.674446eb.chunk.js",
+    "static/js/2.674446eb.chunk.js.map": "/static/js/2.674446eb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a93b121b5cc21d060deb6eea5e3ca4da.js": "/precache-manifest.a93b121b5cc21d060deb6eea5e3ca4da.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dab8f93e.chunk.css.map": "/static/css/main.dab8f93e.chunk.css.map",
+    "static/js/2.674446eb.chunk.js.LICENSE.txt": "/static/js/2.674446eb.chunk.js.LICENSE.txt",
+    "static/media/arrow_left.svg": "/static/media/arrow_left.bcad8300.svg",
+    "static/media/arrow_right.svg": "/static/media/arrow_right.1670e9cb.svg",
+    "static/media/chess_250px.png": "/static/media/chess_250px.0560864b.png",
+    "static/media/chess_400px.png": "/static/media/chess_400px.8a9ed4b2.png",
+    "static/media/tik_250px.png": "/static/media/tik_250px.6610b6c1.png",
+    "static/media/tik_400px.png": "/static/media/tik_400px.a0b40c76.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.371d32f9.js",
+    "static/js/2.674446eb.chunk.js",
+    "static/css/main.dab8f93e.chunk.css",
+    "static/js/main.deb960b3.chunk.js"
+  ]
+}
