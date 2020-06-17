@@ -1041,7 +1041,7 @@ function Chess() {
     }, [])
 
     return (
-        <div id="mainBlockChess">
+        <div className="main-block-chess">
             {win ? (
                 <div className="win-message-wrapper">
                     <div className="win-message">

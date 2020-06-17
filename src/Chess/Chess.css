@@ -3,7 +3,7 @@
     border: solid 5px #30475e;
     margin-top: 15%;
 }
-#mainBlockChess {
+.main-block-chess {
     margin: auto;
     height: 824px;
     width: 824px;

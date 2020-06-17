@@ -1,29 +1,23 @@
-;<Slider data={data} setUrl={setUrl}></Slider>
-
-#divWinMessage {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -200px;
-    margin-top: -100px;
-    width: 400px;
-    height: 200px;
-    border-radius: 10px;
-    border: solid 2px #282c34;
-    font-size: 2rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #30475e;
-}
-
-
-
-
-
-<div className="App">
-<h2 className="label">Minigames</h2>
-<Slider data={data} setUrl={setUrl}></Slider>
-<Links></Links>
-</div>
+return (
+    <div className="mainBlockSnake">
+        {isMobile ? <h2>Sorry, this game doesn't support mobile devices</h2> : null}
+        {!gameState ? (
+            <div className="win-message-wrapper">
+                <div className="win-message">
+                    <h2>{`Game over!\nScore: ${score}`}</h2>
+                    <button
+                        className="win-message-button"
+                        onClick={() => {
+                            window.location.reload()
+                        }}
+                    >
+                        restart
+                    </button>
+                </div>
+            </div>
+        ) : null}
+        <h2 className="score">{`Score: ${score}`}</h2>
+        <canvas width="400px" height="400px" id="canvas" className="canvasSnake"></canvas>
+        {!keyPress ? <p className="controls">Use arrow keys to play</p> : null}
+    </div>
+)

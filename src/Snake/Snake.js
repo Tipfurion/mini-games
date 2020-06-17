@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react'
 import './Snake.css'
 
 function Snake(props) {
+    //const [isMobile, setIsMobile] = useState(false)
+    let isMobile = false
+    if (window.screen.width < 400) {
+        isMobile = true
+    }
     const [score, setScore] = useState(0)
+    const [keyPress, setKeyPress] = useState(null)
     const [gameState, setGameState] = useState(true)
+    const SPEED = 60
     let canvas
     let ctx
     let s = 0
@@ -11,47 +18,64 @@ function Snake(props) {
     let velY = 0
     let x = 10
     let y = 10
-    let foodX = 11
-    let foodY = 11
+    let foodX = 0
+    let foodY = 0
     let greedSize = 20
     let tileCount = 20
     let maxSnakeLength = 1
     let game = true
     let snake = [{ x: x, y: y }]
+    let timeout
+    getRandomTile()
     useEffect(() => {
         canvas = document.getElementById('canvas')
         ctx = canvas.getContext('2d')
         document.addEventListener('keydown', keyPush)
-        setInterval(gameLoop, 60)
+        setInterval(gameLoop, SPEED)
     }, [])
     function keyPush(e) {
-        switch (e.keyCode) {
-            case 37:
-                if (snake.length == 1 || velX !== 1) {
-                    velX = -1
-                    velY = 0
-                }
-
-                break
-            case 38:
-                if (snake.length == 1 || velY !== 1) {
-                    velX = 0
-                    velY = -1
-                }
-                break
-            case 39:
-                if (snake.length == 1 || velX !== -1) {
-                    velX = 1
-                    velY = 0
-                }
-                break
-            case 40:
-                if (snake.length == 1 || velY !== -1) {
-                    velX = 0
-                    velY = 1
-                }
-                break
+        if (!keyPress) {
+            if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40) {
+                setKeyPress(true)
+            }
         }
+        if (timeout) {
+            clearTimeout(timeout)
+            timeout = null
+        }
+
+        timeout = setTimeout(() => {
+            switch (e.keyCode) {
+                case 37:
+                    if (snake.length == 1 || velX !== 1) {
+                        velX = -1
+                        velY = 0
+                    }
+
+                    break
+                case 38:
+                    if (snake.length == 1 || velY !== 1) {
+                        velX = 0
+                        velY = -1
+                    }
+
+                    break
+                case 39:
+                    if (snake.length == 1 || velX !== -1) {
+                        velX = 1
+                        velY = 0
+                    }
+
+                    break
+                case 40:
+                    if (snake.length == 1 || velY !== -1) {
+                        velX = 0
+                        velY = 1
+                    }
+
+                    break
+            }
+        }, SPEED + 1)
     }
     function gameLoop() {
         if (game) {
@@ -75,8 +99,8 @@ function Snake(props) {
             for (let i = 0; i < snake.length; i++) {
                 ctx.fillStyle = 'white'
                 ctx.fillRect(snake[i].x * greedSize, snake[i].y * greedSize, greedSize, greedSize)
-                if (snake.length !== 1 && x === snake[i].x && y === snake[i].y) {
-                    console.log('game Over')
+
+                if (snake.length > 3 && x === snake[i].x && y === snake[i].y) {
                     setGameState(false)
                     game = false
                 }
@@ -106,11 +130,15 @@ function Snake(props) {
             foodY = randY
         } else {
             getRandomTile()
-            console.log('else')
         }
     }
     return (
-        <div className="mainBlockSnake">
+        <div className="main-block-snake">
+            {isMobile ? (
+                <div className="mobile-snake-alert">
+                    <h2 mobile-snake-alert-label>Sorry, this game doesn't support mobile devices</h2>
+                </div>
+            ) : null}
             {!gameState ? (
                 <div className="win-message-wrapper">
                     <div className="win-message">
@@ -127,7 +155,8 @@ function Snake(props) {
                 </div>
             ) : null}
             <h2 className="score">{`Score: ${score}`}</h2>
-            <canvas width="400px" height="400px" id="canvas" className="canvasSnake"></canvas>
+            <canvas width="400px" height="400px" id="canvas" className="canvas-snake"></canvas>
+            {!keyPress ? <p className="controls">Use arrow keys to play</p> : null}
         </div>
     )
 }

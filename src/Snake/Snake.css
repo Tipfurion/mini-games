@@ -1,12 +1,26 @@
-.canvasSnake {
+.canvas-snake {
     border: solid 5px #30475e;
 }
 .score {
     margin-top: 17%;
 }
-.mainBlockSnake {
+.main-block-snake {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.controls {
+    color: white;
+}
+.mobile-snake-alert {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -12,9 +12,8 @@ class Slider extends React.Component {
         super(props)
         this.state = {
             sliderElements: props.data, //{title:string, img:string(path)}
-            currentItemIndex: 0,
+            currentItemIndex: this.props.index,
             element: null,
-            flag: false,
         }
     }
     arrowClick = async (id) => {
@@ -43,7 +42,7 @@ class Slider extends React.Component {
         this.state.element.classList.remove('slider-fade-out')
     }
     gameClick = (route) => {
-        this.props.setUrl('tak')
+        this.props.setSliderElIndex(this.state.currentItemIndex)
         this.props.history.push(route)
     }
 

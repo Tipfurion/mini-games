@@ -8,7 +8,6 @@ function ButtonLink(props) {
                 className="main-page-link"
                 onClick={() => {
                     history.push('/')
-                    props.setUrl('/')
                 }}
             >
                 main page

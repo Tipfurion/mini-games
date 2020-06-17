@@ -7,28 +7,43 @@ import Chess from './Chess/Chess.js'
 import ButtonLink from './ButtonLink.js'
 import Snake from './Snake/Snake.js'
 import './css/App.css'
-
+import chessImg400px from './img/chess_400px.png'
+import chessImg250px from './img/chess_250px.png'
+import snakeImg400px from './img/snake_400px.png'
+import snakeImg250px from './img/snake_250px.png'
+import tikImg400px from './img/tik_400px.png'
+import tikImg250px from './img/tik_250px.png'
+let chessImg
+let snakeImg
+let tikImg
+if (window.screen.width < 400) {
+    chessImg = chessImg250px
+    snakeImg = snakeImg250px
+    tikImg = tikImg250px
+} else {
+    chessImg = chessImg400px
+    snakeImg = snakeImg400px
+    tikImg = tikImg400px
+}
 function App() {
-    console.log(window.client)
-
     const [data, setData] = useState([
         {
-            title: 'Tik tac toe',
-            img: 'https://via.placeholder.com/250x250',
-            route: '/tik',
-        },
-        {
             title: 'Chess',
-            img: 'https://via.placeholder.com/400x400',
+            img: chessImg,
             route: '/chess',
         },
         {
+            title: 'Tik tac toe',
+            img: tikImg,
+            route: '/tik',
+        },
+        {
             title: 'Snake',
-            img: 'https://via.placeholder.com/400x400',
+            img: snakeImg,
             route: '/snake',
         },
     ])
-    const [url, setUrl] = useState('/')
+    const [sliderElIndex, setSliderElIndex] = useState(0)
     const history = useHistory()
     return (
         <Router>
@@ -36,14 +51,14 @@ function App() {
                 <Route exact path="/">
                     <div className="App">
                         <h2 className="label">Minigames</h2>
-                        <Slider data={data} setUrl={setUrl}></Slider>
+                        <Slider data={data} setSliderElIndex={setSliderElIndex} index={sliderElIndex}></Slider>
                         <Links></Links>
                     </div>
                 </Route>
                 <Route path="/tik">
                     <div className="tik">
                         <nav>
-                            <ButtonLink setUrl={setUrl}> </ButtonLink>
+                            <ButtonLink> </ButtonLink>
                         </nav>
 
                         <TikTak></TikTak>
@@ -51,13 +66,13 @@ function App() {
                 </Route>
                 <Route path="/chess">
                     <nav>
-                        <ButtonLink setUrl={setUrl}> </ButtonLink>
+                        <ButtonLink> </ButtonLink>
                     </nav>
                     <Chess></Chess>
                 </Route>
                 <Route path="/snake">
                     <nav>
-                        <ButtonLink setUrl={setUrl}> </ButtonLink>
+                        <ButtonLink> </ButtonLink>
                     </nav>
                     <Snake></Snake>
                 </Route>
